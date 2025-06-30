@@ -1,0 +1,11 @@
+# Core game dependencies
+pygame>=2.0.0
+
+# Performance monitoring dependencies
+psutil>=5.8.0  # For CPU and memory monitoring
+
+# Optional dependencies for advanced profiling
+# Uncomment these for additional performance analysis tools:
+# memory-profiler>=0.60.0  # For detailed memory profiling
+# line-profiler>=3.5.0     # For line-by-line performance profiling
+# py-spy>=0.3.0            # For sampling profiler
