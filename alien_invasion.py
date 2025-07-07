@@ -4,8 +4,8 @@ import pygame
 
 from settings import Settings
 from ship import Ship
-from bullet import Bullet
 from alien import Alien
+from bullet import Bullet
 
 class AlienInvasion:
     """Overall class to manage game assets and behavior."""
@@ -40,11 +40,10 @@ class AlienInvasion:
     def _update_screen(self):
         """Update images on the screen, and flip to the new screen."""
         self.screen.fill(self.settings.bg_color)
-        
         for bullet in self.bullets.sprites(): # For every bullet in the bullets group, draw the bullet.
             bullet.draw_bullet()
-        self.aliens.draw(self.screen) # Draws the aliens on the screen.
         self.ship.blitme()
+
         pygame.display.flip()
 
     def _update_bullets(self):
@@ -55,6 +54,12 @@ class AlienInvasion:
         for bullet in self.bullets.copy():
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
+
+    def _fire_bullet(self):
+        """Create a new bullet and add it to the bullets group."""
+        if len(self.bullets) < self.settings.bullets_allowed:
+            new_bullet = Bullet(self)
+            self.bullets.add(new_bullet) # add() is like append() for lists, except for Pygame groups.
 
     def _check_events(self):
         """Respond to keypresses and mouse events."""
@@ -84,12 +89,6 @@ class AlienInvasion:
             self.ship.moving_right = False
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = False
-
-    def _fire_bullet(self):
-        """Create a new bullet and add it to the bullets group."""
-        if len(self.bullets) < self.settings.bullets_allowed:
-            new_bullet = Bullet(self)
-            self.bullets.add(new_bullet) # add() is like append() for lists, except for Pygame groups.
 
     def _create_fleet(self):
         """Create the fleet of aliens."""
