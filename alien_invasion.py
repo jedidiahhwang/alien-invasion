@@ -42,6 +42,7 @@ class AlienInvasion:
         self.screen.fill(self.settings.bg_color)
         for bullet in self.bullets.sprites(): # For every bullet in the bullets group, draw the bullet.
             bullet.draw_bullet()
+        self.aliens.draw(self.screen) # Draws the aliens on the screen.
         self.ship.blitme()
 
         pygame.display.flip()
