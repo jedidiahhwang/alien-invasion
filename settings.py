@@ -12,3 +12,10 @@ class Settings:
 
         # Ship settings
         self.ship_speed = 3.0 # Speed of the ship moves 3.0 pixels per frame.
+
+        # Bullet settings
+        self.bullet_speed = 5.0 # Speed of the bullet moves 1.0 pixels per frame.
+        self.bullet_width = 3
+        self.bullet_height = 15
+        self.bullet_color = (60, 60, 60)
+        self.bullets_allowed = 3 # Number of bullets allowed on the screen at a time.
