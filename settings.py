@@ -9,3 +9,6 @@ class Settings:
         self.screen_width = 1200
         self.screen_height = 800
         self.bg_color = (135, 206, 235)
+
+        # Ship settings
+        self.ship_speed = 3.0 # Speed of the ship moves 3.0 pixels per frame.
