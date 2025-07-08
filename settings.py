@@ -12,6 +12,7 @@ class Settings:
 
         # Ship settings
         self.ship_speed = 3.0 # Speed of the ship moves 3.0 pixels per frame.
+        self.ship_limit = 3 # Number of ships the player starts with.
 
         # Bullet settings
         self.bullet_speed = 7.0 # Speed of the bullet moves 7.0 pixels per frame.
@@ -22,6 +23,6 @@ class Settings:
 
         # Alien settings
         self.alien_speed = 1.0 # Speed of the alien moves 1.0 pixels per frame.
-        self.fleet_drop_speed = 10 # How quickly the fleet drops down the screen.
+        self.fleet_drop_speed = 50 # How quickly the fleet drops down the screen.
         # fleet_direction of 1 represents right; -1 represents left.
         self.fleet_direction = 1
